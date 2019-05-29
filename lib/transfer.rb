@@ -5,7 +5,7 @@ class Transfer
   def initialize (sender, receiver, amount)
     @sender = sender
     @receiver = receiver
-    @amount = amount 
+    @amount = amount
     @status = 'pending'
   end
 
@@ -17,7 +17,7 @@ class Transfer
     end
   end
 
-  def execute_transaction 
+  def execute_transaction
     if @sender.balance < @amount
       @status = 'rejected'
       return "Transaction rejected."
