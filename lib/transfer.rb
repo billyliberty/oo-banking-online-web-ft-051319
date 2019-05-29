@@ -18,7 +18,7 @@ class Transfer
   end
 
   def execute_transaction
-    if @sender.balance < @amount
+    if @sender.balance < @amount || @sender.status == 'closed'
       @status = 'rejected'
       return "Transaction rejected."
     elsif @status == 'complete'
